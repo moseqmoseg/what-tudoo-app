@@ -1,5 +1,5 @@
 const activityBox = document.getElementById("activityBox");
-const button = document.getElementById(`button`)
+const button = document.getElementById(`button`);
 const colors = [
   "var(--light-pink)",
   "var(--deep-champagne)",
@@ -26,25 +26,20 @@ const colors = [
 //     });
 // }
 
-
 async function changeText() {
   try {
-    
-    const response = await fetch('http://www.boredapi.com/api/activity/');
+    const response = await fetch("https://whattudooserver.netlify.app/");
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-    // after this line, our function will wait for the `response.json()` call to be settled
-    // the `response.json()` call will either return the JSON object or throw an error
+
     const data = await response.json();
     activityBox.innerHTML = data.activity;
-          button.innerHTML= "Na, hit me again"
-    
-          activityBox.style.color =
-            colors[Math.floor(Math.random() * colors.length)];
-            button.style.color=colors[Math.floor(Math.random() * colors.length)];
-  }
-  catch(error) {
-    console.error(`Could not get products: ${error}`);
+    button.innerHTML = "Na, hit me again";
+
+    activityBox.style.color = colors[Math.floor(Math.random() * colors.length)];
+    button.style.color = colors[Math.floor(Math.random() * colors.length)];
+  } catch (error) {
+    console.error(`Could not get activity: ${error}`);
   }
 }
