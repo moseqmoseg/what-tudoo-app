@@ -15,7 +15,7 @@ const colors = [
 function changeText() {
   fetch("https://www.boredapi.com/api/activity/")
     .then((response) => response.json())
-    .catch((error) => console.log(error))
+    .catch((error) => console.log(`this shit didnt work because ${error}`))
     .then((data) => {
       activityBox.innerHTML = data.activity;
       button.innerHTML= "Na, hit me again"
