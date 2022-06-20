@@ -13,7 +13,7 @@ const colors = [
 ];
 
 function changeText() {
-  fetch("https://www.boredapi.com/api/activity/")
+  fetch("http://www.boredapi.com/api/activity/")
     .then((response) => response.json())
     .catch((error) => console.log(`this shit didnt work because ${error}`))
     .then((data) => {
