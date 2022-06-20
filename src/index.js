@@ -30,7 +30,7 @@ const colors = [
 async function changeText() {
   try {
     
-    const response = await fetch('http://www.boredapi.com/api/activity/');
+    const response = await fetch('https://www.boredapi.com/api/activity/');
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
