@@ -15,12 +15,12 @@ const colors = [
 function changeText() {
   fetch("https://www.boredapi.com/api/activity/", {mode: 'cors',headers: {
 	  'Access-Control-Allow-Origin': '*',
-	}})
+	},timeout: 6000})
     .then((response) => response.json())
     .catch((error) => console.log(`this shit didnt work because ${error}`))
     .then((data) => {
       activityBox.innerHTML = data.activity;
-      button.innerHTML = "Na, hit me again";
+      button.innerHTML = "Na, hit me again" ;
 
       activityBox.style.color =
         colors[Math.floor(Math.random() * colors.length)];
