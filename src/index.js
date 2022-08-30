@@ -26,3 +26,4 @@ function changeText() {
     });
 }
 
+button.onclick = changeText;
