@@ -13,7 +13,7 @@ const colors = [
 ];
 
 function changeText() {
-  fetch("http://www.boredapi.com/api/activity/", {mode: 'cors',headers: {
+  fetch("https://www.boredapi.com/api/activity/", {mode: 'cors',headers: {
 	  'Access-Control-Allow-Origin': '*',
 	}})
     .then((response) => response.json())
