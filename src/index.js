@@ -1,5 +1,6 @@
 const activityBox = document.getElementById("activityBox");
 const button = document.getElementById(`button`);
+const activityLink = document.getElementById(`link`);
 const colors = [
   "var(--light-pink)",
   "var(--deep-champagne)",
@@ -13,16 +14,19 @@ const colors = [
 ];
 
 function changeText() {
-  fetch("https://www.boredapi.com/api/activity/", {mode: 'cors',headers: {
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-  }})
+  fetch("https://www.boredapi.com/api/activity/", {
+    mode: "cors",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+  })
     .then((response) => response.json())
     .catch((error) => console.log(`this shit didnt work because ${error}`))
     .then((data) => {
       activityBox.innerHTML = data.activity;
-      button.innerHTML = "Na, hit me again" ;
-
+      button.innerHTML = "Na, hit me again";
+      activityLink.setAttribute("href", data.link);
       activityBox.style.color =
         colors[Math.floor(Math.random() * colors.length)];
       button.style.color = colors[Math.floor(Math.random() * colors.length)];

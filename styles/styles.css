@@ -29,6 +29,11 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 20vh;
+ 
+}
+a{display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 p {
